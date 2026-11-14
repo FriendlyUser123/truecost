@@ -1,0 +1,1317 @@
+{
+  "customerId": "demo-median-household",
+  "checking": {
+    "_id": "acct-household-checking",
+    "type": "Checking",
+    "nickname": "Family Checking",
+    "rewards": 0,
+    "balance": 3900,
+    "account_number": "2000000000003120",
+    "customer_id": "demo-median-household"
+  },
+  "savings": {
+    "_id": "acct-household-savings",
+    "type": "Savings",
+    "nickname": "Rainy Day",
+    "rewards": 0,
+    "balance": 540,
+    "account_number": "2000000000007744",
+    "customer_id": "demo-median-household"
+  },
+  "merchants": [
+    {
+      "_id": "mch-hh-rent",
+      "name": "Capital City Property Mgmt",
+      "category": [
+        "housing"
+      ]
+    },
+    {
+      "_id": "mch-hh-electric",
+      "name": "Dominion Energy",
+      "category": [
+        "utilities"
+      ]
+    },
+    {
+      "_id": "mch-hh-water",
+      "name": "Richmond Dept of Public Utilities",
+      "category": [
+        "utilities"
+      ]
+    },
+    {
+      "_id": "mch-hh-internet",
+      "name": "Comcast Xfinity",
+      "category": [
+        "telecom"
+      ]
+    },
+    {
+      "_id": "mch-hh-phone",
+      "name": "Verizon Wireless",
+      "category": [
+        "telecom"
+      ]
+    },
+    {
+      "_id": "mch-hh-carins",
+      "name": "GEICO",
+      "category": [
+        "insurance"
+      ]
+    },
+    {
+      "_id": "mch-hh-autoloan",
+      "name": "Toyota Financial Services",
+      "category": [
+        "auto"
+      ]
+    },
+    {
+      "_id": "mch-hh-stream",
+      "name": "Netflix",
+      "category": [
+        "entertainment"
+      ]
+    },
+    {
+      "_id": "mch-hh-kroger",
+      "name": "Kroger Broad St",
+      "category": [
+        "groceries"
+      ]
+    },
+    {
+      "_id": "mch-hh-dining",
+      "name": "Richmond Family Dining",
+      "category": [
+        "dining"
+      ]
+    },
+    {
+      "_id": "mch-hh-fuel",
+      "name": "Shell Hull St",
+      "category": [
+        "fuel"
+      ]
+    },
+    {
+      "_id": "mch-hh-target",
+      "name": "Target Southside",
+      "category": [
+        "retail"
+      ]
+    },
+    {
+      "_id": "mch-hh-online",
+      "name": "Amazon Marketplace",
+      "category": [
+        "retail"
+      ]
+    },
+    {
+      "_id": "mch-hh-apparel",
+      "name": "Old Navy Chesterfield",
+      "category": [
+        "apparel"
+      ]
+    },
+    {
+      "_id": "mch-hh-clinic",
+      "name": "VCU Health Community Clinic",
+      "category": [
+        "healthcare"
+      ]
+    },
+    {
+      "_id": "mch-hh-dental",
+      "name": "Bright Smiles Family Dental",
+      "category": [
+        "healthcare"
+      ]
+    },
+    {
+      "_id": "mch-hh-fun",
+      "name": "Regal Short Pump + Family Fun",
+      "category": [
+        "entertainment"
+      ]
+    },
+    {
+      "_id": "mch-hh-school",
+      "name": "Chesterfield County Schools Fees",
+      "category": [
+        "education"
+      ]
+    },
+    {
+      "_id": "mch-hh-home",
+      "name": "Lowes Home Improvement",
+      "category": [
+        "home"
+      ]
+    }
+  ],
+  "deposits": [
+    {
+      "_id": "hdep-001",
+      "type": "deposit",
+      "transaction_date": "2026-06-12",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-002",
+      "type": "deposit",
+      "transaction_date": "2026-06-26",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-003",
+      "type": "deposit",
+      "transaction_date": "2026-07-10",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-004",
+      "type": "deposit",
+      "transaction_date": "2026-07-24",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-005",
+      "type": "deposit",
+      "transaction_date": "2026-08-07",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-006",
+      "type": "deposit",
+      "transaction_date": "2026-08-21",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-007",
+      "type": "deposit",
+      "transaction_date": "2026-09-04",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    },
+    {
+      "_id": "hdep-008",
+      "type": "deposit",
+      "transaction_date": "2026-09-18",
+      "status": "completed",
+      "payee_id": "acct-household-checking",
+      "medium": "balance",
+      "amount": 2801.73,
+      "description": "COMMONWEALTH EMPLOYER GROUP PAYROLL"
+    }
+  ],
+  "withdrawals": [],
+  "purchases": [
+    {
+      "_id": "hpur-001",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-13",
+      "amount": 128.92,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-002",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-13",
+      "amount": 65.52,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-003",
+      "merchant_id": "mch-hh-school",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-13",
+      "amount": 118.22,
+      "status": "completed",
+      "medium": "balance",
+      "description": "SCHOOL FEES + ACTIVITIES"
+    },
+    {
+      "_id": "hpur-004",
+      "merchant_id": "mch-hh-clinic",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-14",
+      "amount": 197.28,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLINIC COPAY"
+    },
+    {
+      "_id": "hpur-005",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-14",
+      "amount": 101.49,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-006",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-14",
+      "amount": 87.76,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-007",
+      "merchant_id": "mch-hh-apparel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-15",
+      "amount": 91.89,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLOTHING"
+    },
+    {
+      "_id": "hpur-008",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-15",
+      "amount": 85.01,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-009",
+      "merchant_id": "mch-hh-home",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-15",
+      "amount": 155.07,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOME AND GARDEN"
+    },
+    {
+      "_id": "hpur-010",
+      "merchant_id": "mch-hh-dental",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-16",
+      "amount": 159.28,
+      "status": "completed",
+      "medium": "balance",
+      "description": "DENTAL"
+    },
+    {
+      "_id": "hpur-011",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-16",
+      "amount": 195.5,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-012",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-20",
+      "amount": 211.29,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-013",
+      "merchant_id": "mch-hh-carins",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-22",
+      "amount": 152,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-3317"
+    },
+    {
+      "_id": "hpur-014",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-22",
+      "amount": 81.7,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-015",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-23",
+      "amount": 107.37,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-016",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-26",
+      "amount": 117.23,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-017",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-27",
+      "amount": 170.11,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-018",
+      "merchant_id": "mch-hh-internet",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-28",
+      "amount": 79.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 400/20"
+    },
+    {
+      "_id": "hpur-019",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-29",
+      "amount": 125.36,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-020",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-06-30",
+      "amount": 112.67,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-021",
+      "merchant_id": "mch-hh-rent",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-01",
+      "amount": 1650,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 3120 HULL ST APT 4B"
+    },
+    {
+      "_id": "hpur-022",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-02",
+      "amount": 70.65,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-023",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-03",
+      "amount": 86.44,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-024",
+      "merchant_id": "mch-hh-phone",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-03",
+      "amount": 168,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY 3 LINES"
+    },
+    {
+      "_id": "hpur-025",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-04",
+      "amount": 234.57,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-026",
+      "merchant_id": "mch-hh-autoloan",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-05",
+      "amount": 448,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO LOAN PAYMENT"
+    },
+    {
+      "_id": "hpur-027",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-07",
+      "amount": 75.17,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-028",
+      "merchant_id": "mch-hh-apparel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-08",
+      "amount": 126.72,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLOTHING"
+    },
+    {
+      "_id": "hpur-029",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-08",
+      "amount": 72.24,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-030",
+      "merchant_id": "mch-hh-home",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-08",
+      "amount": 213.83,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOME AND GARDEN"
+    },
+    {
+      "_id": "hpur-031",
+      "merchant_id": "mch-hh-electric",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-10",
+      "amount": 142,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "hpur-032",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-11",
+      "amount": 150.41,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-033",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-12",
+      "amount": 158.19,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-034",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-13",
+      "amount": 119.2,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-035",
+      "merchant_id": "mch-hh-school",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-14",
+      "amount": 193.75,
+      "status": "completed",
+      "medium": "balance",
+      "description": "SCHOOL FEES + ACTIVITIES"
+    },
+    {
+      "_id": "hpur-036",
+      "merchant_id": "mch-hh-water",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-14",
+      "amount": 58,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WATER AND SEWER"
+    },
+    {
+      "_id": "hpur-037",
+      "merchant_id": "mch-hh-clinic",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-15",
+      "amount": 158.83,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLINIC COPAY"
+    },
+    {
+      "_id": "hpur-038",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-16",
+      "amount": 91.17,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-039",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-18",
+      "amount": 94.86,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-040",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-18",
+      "amount": 189.81,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-041",
+      "merchant_id": "mch-hh-stream",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-19",
+      "amount": 22.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "STREAMING"
+    },
+    {
+      "_id": "hpur-042",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-20",
+      "amount": 97.43,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-043",
+      "merchant_id": "mch-hh-carins",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-22",
+      "amount": 152,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-3317"
+    },
+    {
+      "_id": "hpur-044",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-23",
+      "amount": 76.44,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-045",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-24",
+      "amount": 104.93,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-046",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-25",
+      "amount": 218.45,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-047",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-25",
+      "amount": 182.07,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-048",
+      "merchant_id": "mch-hh-internet",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-28",
+      "amount": 79.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 400/20"
+    },
+    {
+      "_id": "hpur-049",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-29",
+      "amount": 109.18,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-050",
+      "merchant_id": "mch-hh-apparel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-31",
+      "amount": 81.25,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLOTHING"
+    },
+    {
+      "_id": "hpur-051",
+      "merchant_id": "mch-hh-home",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-07-31",
+      "amount": 137.12,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOME AND GARDEN"
+    },
+    {
+      "_id": "hpur-052",
+      "merchant_id": "mch-hh-dental",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-01",
+      "amount": 102.14,
+      "status": "completed",
+      "medium": "balance",
+      "description": "DENTAL"
+    },
+    {
+      "_id": "hpur-053",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-01",
+      "amount": 67.08,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-054",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-01",
+      "amount": 139.67,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-055",
+      "merchant_id": "mch-hh-rent",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-01",
+      "amount": 1650,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 3120 HULL ST APT 4B"
+    },
+    {
+      "_id": "hpur-056",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-02",
+      "amount": 96.45,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-057",
+      "merchant_id": "mch-hh-phone",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-03",
+      "amount": 168,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY 3 LINES"
+    },
+    {
+      "_id": "hpur-058",
+      "merchant_id": "mch-hh-autoloan",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-05",
+      "amount": 448,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO LOAN PAYMENT"
+    },
+    {
+      "_id": "hpur-059",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-07",
+      "amount": 62.47,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-060",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-07",
+      "amount": 116.4,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-061",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-08",
+      "amount": 200.55,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-062",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-09",
+      "amount": 96.33,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-063",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-09",
+      "amount": 69.8,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-064",
+      "merchant_id": "mch-hh-electric",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-10",
+      "amount": 148.5,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "hpur-065",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-12",
+      "amount": 111.01,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-066",
+      "merchant_id": "mch-hh-school",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-14",
+      "amount": 155.98,
+      "status": "completed",
+      "medium": "balance",
+      "description": "SCHOOL FEES + ACTIVITIES"
+    },
+    {
+      "_id": "hpur-067",
+      "merchant_id": "mch-hh-water",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-14",
+      "amount": 58,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WATER AND SEWER"
+    },
+    {
+      "_id": "hpur-068",
+      "merchant_id": "mch-hh-clinic",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-15",
+      "amount": 219.01,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLINIC COPAY"
+    },
+    {
+      "_id": "hpur-069",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-15",
+      "amount": 161.16,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-070",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-17",
+      "amount": 77.4,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-071",
+      "merchant_id": "mch-hh-stream",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-19",
+      "amount": 22.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "STREAMING"
+    },
+    {
+      "_id": "hpur-072",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-20",
+      "amount": 100.23,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-073",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-20",
+      "amount": 167.14,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-074",
+      "merchant_id": "mch-hh-carins",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-22",
+      "amount": 152,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-3317"
+    },
+    {
+      "_id": "hpur-075",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-22",
+      "amount": 227.41,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-076",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-22",
+      "amount": 70.98,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-077",
+      "merchant_id": "mch-hh-apparel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-23",
+      "amount": 102.54,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLOTHING"
+    },
+    {
+      "_id": "hpur-078",
+      "merchant_id": "mch-hh-home",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-23",
+      "amount": 173.03,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOME AND GARDEN"
+    },
+    {
+      "_id": "hpur-079",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-25",
+      "amount": 109.23,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-080",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-25",
+      "amount": 78.84,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-081",
+      "merchant_id": "mch-hh-internet",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-28",
+      "amount": 79.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 400/20"
+    },
+    {
+      "_id": "hpur-082",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-29",
+      "amount": 145.04,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-083",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-08-31",
+      "amount": 80.54,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-084",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-01",
+      "amount": 101.91,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-085",
+      "merchant_id": "mch-hh-rent",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-01",
+      "amount": 1650,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 3120 HULL ST APT 4B"
+    },
+    {
+      "_id": "hpur-086",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-02",
+      "amount": 69.66,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-087",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-02",
+      "amount": 134.31,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-088",
+      "merchant_id": "mch-hh-phone",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-03",
+      "amount": 168,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY 3 LINES"
+    },
+    {
+      "_id": "hpur-089",
+      "merchant_id": "mch-hh-autoloan",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-05",
+      "amount": 448,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO LOAN PAYMENT"
+    },
+    {
+      "_id": "hpur-090",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-05",
+      "amount": 186.22,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-091",
+      "merchant_id": "mch-hh-dining",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-10",
+      "amount": 89.45,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "hpur-092",
+      "merchant_id": "mch-hh-electric",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-10",
+      "amount": 151.3,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "hpur-093",
+      "merchant_id": "mch-hh-fuel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-11",
+      "amount": 113.65,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "hpur-094",
+      "merchant_id": "mch-hh-online",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-11",
+      "amount": 81.9,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ONLINE ORDER"
+    },
+    {
+      "_id": "hpur-095",
+      "merchant_id": "mch-hh-fun",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-12",
+      "amount": 90.74,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ENTERTAINMENT"
+    },
+    {
+      "_id": "hpur-096",
+      "merchant_id": "mch-hh-kroger",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-12",
+      "amount": 205.92,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "hpur-097",
+      "merchant_id": "mch-hh-school",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-14",
+      "amount": 215.09,
+      "status": "completed",
+      "medium": "balance",
+      "description": "SCHOOL FEES + ACTIVITIES"
+    },
+    {
+      "_id": "hpur-098",
+      "merchant_id": "mch-hh-water",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-14",
+      "amount": 58,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WATER AND SEWER"
+    },
+    {
+      "_id": "hpur-099",
+      "merchant_id": "mch-hh-apparel",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-15",
+      "amount": 118.01,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLOTHING"
+    },
+    {
+      "_id": "hpur-100",
+      "merchant_id": "mch-hh-clinic",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-15",
+      "amount": 140.44,
+      "status": "completed",
+      "medium": "balance",
+      "description": "CLINIC COPAY"
+    },
+    {
+      "_id": "hpur-101",
+      "merchant_id": "mch-hh-home",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-15",
+      "amount": 199.14,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOME AND GARDEN"
+    },
+    {
+      "_id": "hpur-102",
+      "merchant_id": "mch-hh-target",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-15",
+      "amount": 189.53,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "hpur-103",
+      "merchant_id": "mch-hh-dental",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-16",
+      "amount": 128.89,
+      "status": "completed",
+      "medium": "balance",
+      "description": "DENTAL"
+    },
+    {
+      "_id": "hpur-104",
+      "merchant_id": "mch-hh-stream",
+      "payer_id": "acct-household-checking",
+      "purchase_date": "2026-09-19",
+      "amount": 22.99,
+      "status": "completed",
+      "medium": "balance",
+      "description": "STREAMING"
+    }
+  ],
+  "transfers": [
+    {
+      "_id": "htrf-001",
+      "type": "transfer",
+      "transaction_date": "2026-07-09",
+      "status": "completed",
+      "medium": "balance",
+      "payer_id": "acct-household-checking",
+      "payee_id": "acct-household-savings",
+      "amount": 180,
+      "description": "AUTOSAVE"
+    },
+    {
+      "_id": "htrf-002",
+      "type": "transfer",
+      "transaction_date": "2026-08-13",
+      "status": "completed",
+      "medium": "balance",
+      "payer_id": "acct-household-checking",
+      "payee_id": "acct-household-savings",
+      "amount": 180,
+      "description": "AUTOSAVE"
+    },
+    {
+      "_id": "htrf-003",
+      "type": "transfer",
+      "transaction_date": "2026-09-10",
+      "status": "completed",
+      "medium": "balance",
+      "payer_id": "acct-household-checking",
+      "payee_id": "acct-household-savings",
+      "amount": 180,
+      "description": "AUTOSAVE"
+    }
+  ],
+  "bills": []
+}

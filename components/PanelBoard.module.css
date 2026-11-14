@@ -1,0 +1,648 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Panel board.
+
+   The reference is the morning census sheet, not a dashboard: one ruled
+   table, figures in a mono column, states carried by a left spine rather than
+   by colour-washed pills. The prescriber has twelve minutes.
+
+   Tokens come from app/globals.css (--ink, --plan, --alarm, --mono, …); this
+   file only adds what the board needs. Three deliberate choices:
+
+     1. REFUSED rows are NOT greyed out. They are the argument. They get the
+        alarm spine, full-ink prose and the widest WHY cell on the screen.
+     2. The slot meter reads like an instrument — a big integer, spent pips,
+        and a control the physician can move — because the claim is that they
+        own the inventory, and a read-only number does not say that.
+     3. Nothing animates except the slider thumb. A board that slides around
+        while a doctor is reading it is a board they stop trusting.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.badgeSplit {
+  color: var(--ink-3);
+  border-left: 1px solid var(--rule);
+  padding-left: 7px;
+}
+
+/* ── prescriber band ─────────────────────────────────────────────────────── */
+
+.who {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 20px;
+  padding: 16px 0 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.who h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.who span {
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+.whoDate {
+  margin-left: auto;
+  color: var(--ink-3) !important;
+  font-size: 12.5px;
+}
+
+.kicker {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ── the slot meter ──────────────────────────────────────────────────────── */
+
+.meter {
+  display: grid;
+  gap: 1px;
+  margin-top: 18px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-panel);
+}
+@media (min-width: 900px) {
+  .meter { grid-template-columns: 250px 1fr; }
+  .stats { grid-column: 1 / -1; }
+}
+
+.meterFig {
+  background: var(--card);
+  padding: 15px 20px 17px;
+  border-left: 4px solid var(--plan);
+}
+.meterCount {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 4px;
+}
+.meterN {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+.meterOf {
+  font-size: 17px;
+  color: var(--ink-3);
+  font-family: var(--mono);
+}
+.meterNote {
+  margin: 9px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+/* Spent slots are solid ink, the ones this board is about to fill are plan
+   blue, the remainder is an empty box. The row is the week at a glance. */
+.pips {
+  display: flex;
+  gap: 5px;
+  margin-top: 11px;
+}
+.pips i {
+  width: 22px;
+  height: 10px;
+  border: 1px solid var(--ink-3);
+  background: transparent;
+}
+.pips i[data-kind='spent'] { background: var(--ink); border-color: var(--ink); }
+.pips i[data-kind='filled'] { background: var(--plan); border-color: var(--plan); }
+
+/* ── the control ─────────────────────────────────────────────────────────── */
+
+.control {
+  background: var(--card);
+  padding: 15px 20px 17px;
+  min-width: 0;
+}
+.controlHead {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.controlHead label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  cursor: pointer;
+}
+.controlVal {
+  margin-left: auto;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--plan);
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: 12px 0 0;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+.slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--rule);
+  border-radius: 0;
+}
+.slider::-moz-range-track {
+  height: 4px;
+  background: var(--rule);
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 22px;
+  margin-top: -9px;
+  background: var(--plan);
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(14, 23, 38, 0.35);
+}
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 22px;
+  background: var(--plan);
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(14, 23, 38, 0.35);
+}
+.slider:focus-visible { outline: 2px solid var(--plan); outline-offset: 4px; }
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  padding: 0 4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+/* The measured saturation point is marked on the scale, so moving the slider
+   is visibly a decision relative to a measurement rather than a free choice. */
+.ticks span[data-measured='yes'] {
+  color: var(--plan);
+  font-weight: 600;
+  position: relative;
+}
+.ticks span[data-measured='yes']::after {
+  content: 'measured';
+  position: absolute;
+  left: 50%;
+  top: 13px;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--plan);
+  white-space: nowrap;
+}
+
+.controlNote {
+  margin: 22px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 78ch;
+}
+.controlNote b { color: var(--ink); font-weight: 600; }
+
+.controlWarn {
+  margin: 9px 0 0;
+  font-size: 12.5px;
+  color: var(--alarm);
+}
+
+/* ── measured stats ──────────────────────────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px 26px;
+  margin: 0;
+  background: var(--stock);
+  padding: 13px 20px 15px;
+}
+.stats > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stats dt {
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+.stats dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.stats dd small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+/* ── board header ────────────────────────────────────────────────────────── */
+
+.boardHead {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ink);
+}
+.boardHead h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.counts {
+  margin-left: auto;
+  display: flex;
+  gap: 4px 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.counts b { font-weight: 500; white-space: nowrap; }
+.counts b[data-state='CLEARED'] { color: var(--ok); }
+.counts b[data-state='PAP_QUEUE'] { color: var(--gold); }
+.counts b[data-state='REFUSED'] { color: var(--alarm); }
+
+/* Money and dates must not break mid-figure, so the table scrolls inside its
+   own box on a narrow screen instead of dragging the page sideways. */
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ── the table ───────────────────────────────────────────────────────────── */
+
+.board {
+  width: 100%;
+  min-width: 940px;
+  border-collapse: collapse;
+  background: var(--card);
+  box-shadow: var(--shadow-panel);
+}
+.board[data-busy='yes'] { opacity: 0.55; }
+
+.board thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--stock);
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.board thead th small {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  opacity: 0.8;
+}
+
+.row { position: relative; border-bottom: 1px solid var(--rule-2); }
+.row:last-child { border-bottom: none; }
+.row td {
+  padding: 11px 14px;
+  vertical-align: top;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.row:hover { background: var(--stock); }
+
+/* The state spine. Colour is applied once, on the first cell, and every other
+   affordance in the row inherits meaning from it. */
+.row td:first-child { box-shadow: inset 4px 0 0 var(--spine, var(--rule)); }
+.row[data-state='CLEARED']   { --spine: var(--ok); }
+.row[data-state='DEFERRED']  { --spine: var(--ink-3); }
+.row[data-state='PAP_QUEUE'] { --spine: var(--gold); }
+.row[data-state='REFUSED']   { --spine: var(--alarm); }
+
+/* Refused rows carry the weight of the argument. Tinted, not dimmed, and
+   ruled off top and bottom so the block reads as its own section. */
+.row[data-state='REFUSED'] { background: var(--alarm-lo); }
+.row[data-state='REFUSED']:hover { background: #f2dcdd; }
+.row[data-state='REFUSED'] + .row[data-state='REFUSED'] { border-top: 1px solid #ecd0d2; }
+
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--spine, var(--ink-2));
+  white-space: nowrap;
+}
+.chip i {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+.row[data-state='DEFERRED'] .chip { color: var(--ink-3); }
+.row[data-state='REFUSED'] .chip { font-size: 12px; }
+
+.cState { width: 118px; }
+
+.cRef { width: 112px; }
+.rowLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+/* Stretched link: the whole row is the target, the initials are the label. */
+.rowLink::after { content: ''; position: absolute; inset: 0; }
+.rowLink b {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.rowLink span {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.row:hover .rowLink b { color: var(--plan); text-decoration: underline; }
+
+.cDrug { width: 250px; }
+.drug { display: block; font-weight: 500; letter-spacing: -0.01em; }
+.copay { display: block; margin-top: 1px; font-size: 13px; color: var(--ink-2); }
+
+.cIndex,
+.cLedger {
+  width: 104px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.cIndex { color: var(--ink-2); }
+.cIndex[data-event='no-fill'] { color: var(--ink); }
+.cIndex[data-event='none'] { color: var(--ink-3); }
+.cLedger[data-class='none'] { color: var(--ink-3); }
+.cLedger[data-class='STRUCTURAL'] { color: var(--gold); font-weight: 600; }
+.cLedger[data-class='STALE'] { color: var(--alarm); font-weight: 600; }
+.cLedger[data-class='TIMING'] { color: var(--bank); font-weight: 600; }
+
+.cReady { width: 92px; white-space: nowrap; }
+.cReady span { font-size: 13.5px; font-weight: 500; }
+.cReady small { display: block; font-size: 11px; color: var(--ink-3); }
+.dash { color: var(--ink-3); }
+
+.cWhy { min-width: 300px; }
+.whyLead {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--alarm);
+  line-height: 1.45;
+  margin-bottom: 3px;
+}
+.whyBody {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  max-width: 62ch;
+}
+.row[data-state='REFUSED'] .whyBody { color: var(--ink); }
+
+/* ── after the table ─────────────────────────────────────────────────────── */
+
+.after {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+@media (min-width: 860px) { .after { grid-template-columns: 1.4fr 1fr; } }
+
+.refusedNote {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--alarm);
+  padding: 14px 18px 16px;
+}
+.refusedNote p {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 64ch;
+}
+
+.privacy {
+  background: var(--stock);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--plan);
+  padding: 14px 18px 16px;
+}
+.privacy p {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.privacy b { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 620px) {
+  .meterN { font-size: 42px; }
+  .who h1 { font-size: 20px; }
+  .whoDate { margin-left: 0; }
+}
+
+/* The routing line on a cleared row. The class is not a severity label — it
+   is an instruction, and TIMING vs STALE vs STRUCTURAL are three different
+   ones. Printing it here is what stops "patient declined". */
+.whyRoute {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   The disposition ledger, and the two never-sent states.
+
+   The repositioning put the headline on how FEW alerts are sent, so the
+   board can no longer lead with a count of what cleared. This block is the
+   first thing under the meter: sends on the left, everything withheld on the
+   right, at the same type size. Suppressed is styled as a decision, not as a
+   dropout — it carries the bank spine, full-ink prose and its own note under
+   the table, because a row we believed completely and still refused to send
+   is the strongest argument on the screen.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.ledger {
+  display: grid;
+  gap: 1px;
+  margin-top: 22px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-panel);
+}
+@media (min-width: 860px) {
+  .ledger { grid-template-columns: 1fr 1.25fr; }
+}
+
+.ledgerSide {
+  background: var(--card);
+  padding: 14px 20px 16px;
+}
+.ledgerSide[data-side='sent'] { border-left: 4px solid var(--ok); }
+.ledgerSide[data-side='withheld'] {
+  border-left: 4px solid var(--bank);
+  background: var(--stock);
+}
+
+.ledgerRow {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0 0;
+}
+.ledgerRow + .ledgerRow { border-top: 1px solid var(--rule-2); margin-top: 9px; }
+
+.ledgerN {
+  flex: none;
+  width: 1.6em;
+  text-align: right;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.ledgerRow[data-state='SUPPRESSED'] .ledgerN { color: var(--bank); }
+.ledgerRow[data-state='REFUSED'] .ledgerN { color: var(--alarm); }
+.ledgerRow[data-state='DEFERRED'] .ledgerN { color: var(--ink-3); }
+
+.ledgerLab { min-width: 0; }
+.ledgerLab b {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ledgerLab small {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 58ch;
+}
+.ledgerRow[data-state='DEFERRED'] .ledgerLab b,
+.ledgerRow[data-state='DEFERRED'] .ledgerLab small { color: var(--ink-3); }
+
+/* The debt stat is a word with its interval under it. A bare decimal here
+   would be two orders of magnitude inside the noise of its own inputs. */
+.debtDd { margin: 0; }
+.debtDd b {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  text-transform: lowercase;
+}
+.debtDd small {
+  display: block;
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--ink-3);
+  letter-spacing: -0.01em;
+}
+
+.counts b[data-state='SUPPRESSED'] { color: var(--bank); }
+.counts b[data-state='DEFERRED'] { color: var(--ink-3); }
+
+/* ── suppressed rows in the table ────────────────────────────────────────── */
+
+.row[data-state='SUPPRESSED'] { --spine: var(--bank); background: #f4f6f8; }
+.row[data-state='SUPPRESSED']:hover { background: #eceff3; }
+.row[data-state='SUPPRESSED'] .chip { font-size: 12px; }
+.row[data-state='SUPPRESSED'] .whyRoute { color: var(--bank); }
+.row[data-state='SUPPRESSED'] .whyBody { color: var(--ink); }
+/* Not dimmed. A suppressed row is a decision we want read, so the only thing
+   that marks it as unsent is the rule down its left edge and the chip. */
+.row[data-sent='no'] td:first-child { box-shadow: inset 4px 0 0 var(--spine); }
+
+.suppressedNote {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--bank);
+  padding: 14px 18px 16px;
+}
+.suppressedNote p {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 64ch;
+}
+.suppressedNote b { font-weight: 600; }
+
+@media (min-width: 860px) {
+  /* Three notes under the table: suppressed and refused share the top row,
+     the privacy block runs the full width beneath them. */
+  .after { grid-template-columns: 1fr 1fr; }
+  .privacy { grid-column: 1 / -1; }
+}
+
+.linkage {
+  margin-top: 10px !important;
+  padding-top: 9px;
+  border-top: 1px solid var(--rule);
+  font-size: 11.5px !important;
+  color: var(--ink-3) !important;
+}
+
+/* Link to the plan-year crossing. The board shows one copay because a
+   prescription has one price today; this is where that turns out to be a
+   simplification worth pulling on. */
+.planYearLink {
+  font-size: 12.5px;
+  color: var(--accent, #0f5f57);
+  text-decoration: none;
+  border: 1px solid var(--line, #e2e0d8);
+  border-radius: 2px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+.planYearLink:hover { background: var(--line-2, #efede6); text-decoration: underline; }

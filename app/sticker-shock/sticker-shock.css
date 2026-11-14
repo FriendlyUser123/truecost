@@ -1,0 +1,103 @@
+/* Sticker Shock — the standalone side kick.
+   Deliberately not the clinician panel: this one is a price board in a dark
+   room, one warm signal colour, numerals doing all the shouting. It shares
+   nothing with the main app but the html shell. */
+
+.ss {
+  --ss-ink:  #0b1220;
+  --ss-deep: #060b14;
+  --ss-pap:  #f3f5f8;
+  --ss-dim:  #8a99b0;
+  --ss-hot:  #ffb400;
+  --ss-red:  #ff5c47;
+  --ss-good: #4ade9b;
+  --ss-line: #1d2941;
+
+  min-height: 100vh;
+  background:
+    radial-gradient(1100px 520px at 50% -8%, #16233c 0%, transparent 62%),
+    var(--ss-deep);
+  color: var(--ss-pap);
+  font-family: 'Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  padding: 0 20px 80px;
+}
+.ss * { box-sizing: border-box; }
+.ss-wrap { max-width: 720px; margin: 0 auto; }
+
+.ss-top { padding: 44px 0 26px; text-align: center; }
+.ss-kicker {
+  font-family: 'Plex Mono', monospace; font-size: 12px; color: var(--ss-hot);
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.ss-top h1 {
+  margin: 12px 0 10px; font-size: clamp(38px, 9vw, 66px); font-weight: 600;
+  letter-spacing: -0.045em; line-height: 0.95;
+}
+.ss-top p { margin: 0 auto; color: var(--ss-dim); font-size: 16px; max-width: 40ch; line-height: 1.5; }
+
+.ss-q { border-top: 1px solid var(--ss-line); padding: 26px 0 22px; }
+.ss-q h2 { margin: 0 0 4px; font-size: 21px; font-weight: 500; letter-spacing: -0.02em; }
+.ss-q .sub { color: var(--ss-dim); font-size: 14px; margin-bottom: 20px; }
+
+.ss-guess {
+  font-family: 'Plex Mono', monospace; font-variant-numeric: tabular-nums;
+  font-size: clamp(42px, 11vw, 62px); font-weight: 600; letter-spacing: -0.05em;
+  color: var(--ss-hot); line-height: 1; text-align: center; margin-bottom: 14px;
+}
+.ss-range { width: 100%; margin: 0; accent-color: var(--ss-hot); height: 30px; cursor: grab; }
+.ss-scale {
+  display: flex; justify-content: space-between;
+  font-family: 'Plex Mono', monospace; font-size: 11px; color: var(--ss-dim); margin-top: 2px;
+}
+
+.ss-cta { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.ss-btn {
+  font-family: inherit; font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+  background: var(--ss-hot); color: #1a1205; border: none; border-radius: 3px;
+  padding: 15px 34px; cursor: pointer; transition: transform 90ms ease, filter 120ms ease;
+}
+.ss-btn:hover { filter: brightness(1.08); }
+.ss-btn:active { transform: translateY(1px); }
+.ss-btn.ghost {
+  background: transparent; color: var(--ss-pap); border: 1px solid var(--ss-line);
+  font-size: 15px; font-weight: 500; padding: 14px 24px;
+}
+.ss-btn.ghost:hover { border-color: var(--ss-dim); filter: none; }
+.ss :focus-visible { outline: 2px solid var(--ss-hot); outline-offset: 3px; }
+
+/* result */
+.ss-verdict { text-align: center; padding: 34px 0 6px; }
+.ss-off {
+  font-family: 'Plex Mono', monospace; font-variant-numeric: tabular-nums;
+  font-size: clamp(56px, 16vw, 112px); font-weight: 600; letter-spacing: -0.06em;
+  line-height: 0.9; color: var(--ss-red);
+}
+.ss-off.close { color: var(--ss-good); }
+.ss-offlabel { color: var(--ss-dim); font-size: 14px; letter-spacing: 0.04em; margin-top: 8px; }
+.ss-title {
+  margin: 22px 0 8px; font-size: clamp(26px, 6vw, 38px); font-weight: 600;
+  letter-spacing: -0.035em; line-height: 1.08;
+}
+.ss-line { color: var(--ss-dim); font-size: 16.5px; line-height: 1.55; max-width: 38ch; margin: 0 auto; }
+
+.ss-rows { margin: 30px 0 0; border-top: 1px solid var(--ss-line); }
+.ss-row {
+  display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: baseline;
+  padding: 13px 0; border-bottom: 1px solid var(--ss-line);
+}
+.ss-row .nm { font-size: 14.5px; }
+.ss-row .nm small { display: block; color: var(--ss-dim); font-size: 12px; margin-top: 2px; }
+.ss-row .v {
+  font-family: 'Plex Mono', monospace; font-variant-numeric: tabular-nums;
+  font-size: 15px; letter-spacing: -0.02em; text-align: right; min-width: 86px;
+}
+.ss-row .v.you { color: var(--ss-dim); }
+.ss-row .v.real { color: var(--ss-hot); font-weight: 500; }
+
+.ss-card { margin: 28px auto 0; display: block; width: 100%; max-width: 560px; border: 1px solid var(--ss-line); }
+.ss-foot {
+  margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--ss-line);
+  color: var(--ss-dim); font-size: 12.5px; line-height: 1.6; text-align: center;
+}
+.ss-foot a { color: var(--ss-hot); }
+.ss-note { color: var(--ss-dim); font-size: 12px; text-align: center; margin-top: 14px; }

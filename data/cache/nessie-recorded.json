@@ -1,0 +1,917 @@
+{
+  "customerId": "8f1c9fb0-4487-4f82-9fb8-8752bd51212e",
+  "checking": {
+    "_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+    "type": "Checking",
+    "nickname": "Everyday Checking",
+    "rewards": 0,
+    "balance": 205,
+    "account_number": "4192177426982748",
+    "customer_id": "8f1c9fb0-4487-4f82-9fb8-8752bd51212e"
+  },
+  "savings": {
+    "_id": "1a7a4be8-470f-43c8-9b79-c8eb3ac683e4",
+    "type": "Savings",
+    "nickname": "Rainy Day",
+    "rewards": 0,
+    "balance": 0,
+    "account_number": "0725093043916414",
+    "customer_id": "8f1c9fb0-4487-4f82-9fb8-8752bd51212e"
+  },
+  "merchants": [
+    {
+      "_id": "155a3f88-5715-4463-885a-8da1f55aec6e",
+      "name": "Dollar General #8821",
+      "category": "retail",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "1a297341-afd4-4c5c-92b8-34211d112448",
+      "name": "Target Roanoke",
+      "category": "retail",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "5416cd87-dd2a-4cae-b32e-2623b15739ea",
+      "name": "CVS Pharmacy #3391",
+      "category": "pharmacy",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "name": "Exxon Williamson Rd",
+      "category": "fuel",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "768d2132-c9c0-442d-a1cb-b94d08c8f2c2",
+      "name": "Verizon Wireless",
+      "category": "telecom",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "name": "Kroger #412 Roanoke",
+      "category": "groceries",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "81baa145-4016-4601-8ea4-a58f93f13732",
+      "name": "Blue Ridge Property Mgmt",
+      "category": "housing",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "name": "El Rodeo Mexican Restaurant",
+      "category": "dining",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "8f715415-eb79-43f7-b792-84d745f74eb1",
+      "name": "Cox Communications",
+      "category": "telecom",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "acc113e1-8656-4093-887b-1452b00180bc",
+      "name": "Progressive Insurance",
+      "category": "insurance",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "beef5cd5-66e6-425e-843a-d7e3e37a5153",
+      "name": "Appalachian Power",
+      "category": "utilities",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "cb25e354-8141-4270-9d4e-a20407de067b",
+      "name": "Firestone Complete Auto Care",
+      "category": "auto",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    },
+    {
+      "_id": "eb4b54f3-ebec-4a74-a86d-23bd3a3e2c88",
+      "name": "Walmart Supercenter Roanoke",
+      "category": "retail",
+      "address": {
+        "street_number": "1",
+        "street_name": "Market St SE",
+        "city": "Roanoke",
+        "state": "VA",
+        "zip": "24011"
+      },
+      "geocode": {
+        "lat": 37.27,
+        "lng": -79.94
+      }
+    }
+  ],
+  "deposits": [
+    {
+      "_id": "1c335892-64b8-4044-a613-c09359128579",
+      "medium": "balance",
+      "transaction_date": "2026-07-17",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "35e60fcd-cc46-4fee-b01f-b2bd9877bc0a",
+      "medium": "balance",
+      "transaction_date": "2026-08-28",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "398d10ff-ed53-4ef3-aaa1-c7231b5f46e9",
+      "medium": "balance",
+      "transaction_date": "2026-07-03",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "6c5dedb1-9f2b-42d7-b3b5-c8f9ff6005d5",
+      "medium": "balance",
+      "transaction_date": "2026-07-31",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "79f9a95a-dc5c-4349-9cb1-13e1f7b32010",
+      "medium": "balance",
+      "transaction_date": "2026-08-14",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "f1b43d3c-6843-4021-8b81-e369000e336d",
+      "medium": "balance",
+      "transaction_date": "2026-09-11",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    },
+    {
+      "_id": "f63c5d6f-d9ee-4060-8702-472faa6e979c",
+      "medium": "balance",
+      "transaction_date": "2026-06-19",
+      "status": "completed",
+      "amount": 1183,
+      "description": "ROANOKE HOSPITALITY GRP PAYROLL"
+    }
+  ],
+  "withdrawals": [
+    {
+      "_id": "0c6fa1fa-eea9-4df2-99c3-b2ace4a8e389",
+      "type": "withdrawal",
+      "transaction_date": "2026-09-15",
+      "status": "completed",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "medium": "balance",
+      "amount": 340,
+      "description": "CARILION ROANOKE MEMORIAL ED - PATIENT RESPONSIBILITY"
+    },
+    {
+      "_id": "223ee451-106d-4dca-abff-9ecc902b6d00",
+      "type": "withdrawal",
+      "transaction_date": "2026-08-07",
+      "status": "completed",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "medium": "balance",
+      "amount": 60,
+      "description": "ATM WITHDRAWAL - MEMBER ONE FCU"
+    },
+    {
+      "_id": "38568d09-8f0f-4c15-9f34-c8bb9b011714",
+      "type": "withdrawal",
+      "transaction_date": "2026-08-22",
+      "status": "completed",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "medium": "balance",
+      "amount": 210,
+      "description": "CARILION URGENT CARE - VISIT, PATIENT RESPONSIBILITY"
+    },
+    {
+      "_id": "3ca5560e-723d-4b70-942e-ae9695c37005",
+      "type": "withdrawal",
+      "transaction_date": "2026-07-06",
+      "status": "completed",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "medium": "balance",
+      "amount": 100,
+      "description": "ATM WITHDRAWAL - MEMBER ONE FCU"
+    },
+    {
+      "_id": "3d51afca-63b2-4f98-a7fc-2d745b530231",
+      "type": "withdrawal",
+      "transaction_date": "2026-09-08",
+      "status": "completed",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "medium": "balance",
+      "amount": 120,
+      "description": "ATM WITHDRAWAL - MEMBER ONE FCU"
+    }
+  ],
+  "purchases": [
+    {
+      "_id": "017b776a-5c8e-4478-bac0-11d4ea20632b",
+      "type": "merchant",
+      "merchant_id": "acc113e1-8656-4093-887b-1452b00180bc",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-22",
+      "amount": 118,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-8841"
+    },
+    {
+      "_id": "09308885-ad42-4953-9bef-7ecba0a7a350",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-24",
+      "amount": 24,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "0ace5104-9cff-466f-b73a-b713c926ccc6",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-11",
+      "amount": 31,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "1005b8ed-6dff-4572-98d7-85a12debc9f9",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-23",
+      "amount": 72,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "1060bf93-2f88-480b-9a2d-68564d4c77d4",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-15",
+      "amount": 27,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "12ab7e52-9831-477c-ab28-bf052e4a5002",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-08",
+      "amount": 90,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "2a11f320-0aab-46f0-8860-a080cf1f480a",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-14",
+      "amount": 38,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "3ade9ea8-b800-4556-a9d6-e52f7ce8564e",
+      "type": "merchant",
+      "merchant_id": "eb4b54f3-ebec-4a74-a86d-23bd3a3e2c88",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-27",
+      "amount": 112,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "3f010612-cf78-423e-8bbe-c3f9fc0ee01d",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-11",
+      "amount": 44,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "4ca446b3-9023-4472-bb10-0d1af5542fc3",
+      "type": "merchant",
+      "merchant_id": "beef5cd5-66e6-425e-843a-d7e3e37a5153",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-12",
+      "amount": 179,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "4d1c6d0d-5775-46cf-a7c0-74e0084220fb",
+      "type": "merchant",
+      "merchant_id": "768d2132-c9c0-442d-a1cb-b94d08c8f2c2",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-18",
+      "amount": 94,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY"
+    },
+    {
+      "_id": "4e967c6a-698b-4bb2-b2d3-0d82de1c6ff3",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-25",
+      "amount": 52,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "5128b00c-7735-4039-9b3f-2e392c4d4349",
+      "type": "merchant",
+      "merchant_id": "acc113e1-8656-4093-887b-1452b00180bc",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-22",
+      "amount": 118,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-8841"
+    },
+    {
+      "_id": "5535d58c-d9fe-4482-89b1-4e5c23ef69c9",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-28",
+      "amount": 83,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "6164ab6f-7273-410a-95b7-ae698858d121",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-02",
+      "amount": 22,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "6486df6e-6448-49a2-acb6-7df90b0bdf07",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-03",
+      "amount": 55,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "65dbf8d0-4d27-4c04-a1e9-9be37b82cbe6",
+      "type": "merchant",
+      "merchant_id": "1a297341-afd4-4c5c-92b8-34211d112448",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-16",
+      "amount": 78,
+      "status": "completed",
+      "medium": "balance",
+      "description": "SCHOOL SUPPLIES"
+    },
+    {
+      "_id": "688e04fc-f361-4a4e-9093-73dfe81d15b3",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-17",
+      "amount": 38,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "6c11512f-7d0c-4439-a25a-be1c2354b594",
+      "type": "merchant",
+      "merchant_id": "8f715415-eb79-43f7-b792-84d745f74eb1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-26",
+      "amount": 95,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 100/10"
+    },
+    {
+      "_id": "6de2fb4f-859b-4995-9709-3212e7cd2d59",
+      "type": "merchant",
+      "merchant_id": "8f715415-eb79-43f7-b792-84d745f74eb1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-26",
+      "amount": 95,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 100/10"
+    },
+    {
+      "_id": "71bc5dba-32d0-4f57-8c0b-6cff8eb67731",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-04",
+      "amount": 88,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "7691c067-2969-4d72-b198-ff2c001b1645",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-30",
+      "amount": 58,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "782f3642-0677-42ce-8c22-54f9fc9831b8",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-29",
+      "amount": 18,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "7c63556d-313d-44d6-87d4-1fcd3f81fe56",
+      "type": "merchant",
+      "merchant_id": "beef5cd5-66e6-425e-843a-d7e3e37a5153",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-12",
+      "amount": 186,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "7cc7fb39-2782-4ab9-a976-a3f47382c988",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-07",
+      "amount": 91,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "8042086a-4a3f-46fe-a93a-fd603b5f5083",
+      "type": "merchant",
+      "merchant_id": "155a3f88-5715-4463-885a-8da1f55aec6e",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-02",
+      "amount": 34,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "87498de9-c620-4f58-93a2-01bd1d1aeade",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-20",
+      "amount": 29,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "88edafd8-516b-4529-9740-eefe92b510c6",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-23",
+      "amount": 33,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "8bd44ecb-7797-4efd-bc86-d8be0b4bbc91",
+      "type": "merchant",
+      "merchant_id": "5416cd87-dd2a-4cae-b32e-2623b15739ea",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-05",
+      "amount": 64,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RX METFORMIN 90CT + TEST STRIPS"
+    },
+    {
+      "_id": "8fd47664-c0e1-4dfc-b250-e80222ee025e",
+      "type": "merchant",
+      "merchant_id": "768d2132-c9c0-442d-a1cb-b94d08c8f2c2",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-18",
+      "amount": 94,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY"
+    },
+    {
+      "_id": "99b71de6-8785-46cf-a54e-8388b65629cc",
+      "type": "merchant",
+      "merchant_id": "eb4b54f3-ebec-4a74-a86d-23bd3a3e2c88",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-09",
+      "amount": 143,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "9d2b95e7-baa0-487b-92fd-681b2d92bd58",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-01",
+      "amount": 38,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "a09d5176-33c7-4b0a-a138-78af294494af",
+      "type": "merchant",
+      "merchant_id": "81baa145-4016-4601-8ea4-a58f93f13732",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-05",
+      "amount": 1150,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 1412 PATTERSON AVE SW"
+    },
+    {
+      "_id": "a9acd466-3fd5-40cd-ab3d-a365ca6a3fa9",
+      "type": "merchant",
+      "merchant_id": "cb25e354-8141-4270-9d4e-a20407de067b",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-26",
+      "amount": 268,
+      "status": "completed",
+      "medium": "balance",
+      "description": "BRAKE PADS + ROTORS"
+    },
+    {
+      "_id": "b52e84c8-98e6-4e05-99e6-dc10d6af9ae4",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-16",
+      "amount": 67,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "b7883fa6-506c-48c5-95d1-b8d38a625b57",
+      "type": "merchant",
+      "merchant_id": "beef5cd5-66e6-425e-843a-d7e3e37a5153",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-12",
+      "amount": 181,
+      "status": "completed",
+      "medium": "balance",
+      "description": "ELECTRIC SERVICE"
+    },
+    {
+      "_id": "b9cbf4f9-7952-47e3-894e-f664ca07b288",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-09",
+      "amount": 52,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "bc37a399-214b-4241-847d-0ace34a4f97b",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-21",
+      "amount": 64,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "be4cc33b-be51-4e66-91d8-baece73a8fd6",
+      "type": "merchant",
+      "merchant_id": "768d2132-c9c0-442d-a1cb-b94d08c8f2c2",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-18",
+      "amount": 94,
+      "status": "completed",
+      "medium": "balance",
+      "description": "WIRELESS AUTOPAY"
+    },
+    {
+      "_id": "cba9ce46-8be2-4a3c-a280-10056f3b184a",
+      "type": "merchant",
+      "merchant_id": "81baa145-4016-4601-8ea4-a58f93f13732",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-07-05",
+      "amount": 1150,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 1412 PATTERSON AVE SW"
+    },
+    {
+      "_id": "ce566276-4ac1-4bfa-bb8f-38caf36edcfe",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-25",
+      "amount": 41,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "d210cfc8-4533-4ad0-af36-786d8b39d485",
+      "type": "merchant",
+      "merchant_id": "81baa145-4016-4601-8ea4-a58f93f13732",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-05",
+      "amount": 1150,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RENT 1412 PATTERSON AVE SW"
+    },
+    {
+      "_id": "d9ecdcf4-a0d1-48d8-a1b3-d6a06b009713",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-15",
+      "amount": 61,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "df43704e-5435-4767-a984-171788476aef",
+      "type": "merchant",
+      "merchant_id": "8f715415-eb79-43f7-b792-84d745f74eb1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-26",
+      "amount": 95,
+      "status": "completed",
+      "medium": "balance",
+      "description": "INTERNET 100/10"
+    },
+    {
+      "_id": "e044b77a-c191-484c-8a84-08a8ada96e86",
+      "type": "merchant",
+      "merchant_id": "155a3f88-5715-4463-885a-8da1f55aec6e",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-13",
+      "amount": 28,
+      "status": "completed",
+      "medium": "balance",
+      "description": "HOUSEHOLD"
+    },
+    {
+      "_id": "e389fb68-9c39-44aa-a9b5-cc94932fe60a",
+      "type": "merchant",
+      "merchant_id": "78c0f5f1-4c8f-48d6-9602-da405b52a8ce",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-18",
+      "amount": 71,
+      "status": "completed",
+      "medium": "balance",
+      "description": "GROCERY"
+    },
+    {
+      "_id": "e559647a-0d45-444c-8061-55d3851b7415",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-06-13",
+      "amount": 44,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    },
+    {
+      "_id": "fa81b977-d346-4fe7-80da-d4df4be31a9a",
+      "type": "merchant",
+      "merchant_id": "acc113e1-8656-4093-887b-1452b00180bc",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-22",
+      "amount": 118,
+      "status": "completed",
+      "medium": "balance",
+      "description": "AUTO POLICY VA-8841"
+    },
+    {
+      "_id": "fcb8b6f7-0b2c-4221-8c3e-8701bfb0b50d",
+      "type": "merchant",
+      "merchant_id": "8b7e7c27-cdf7-4bea-8ab4-82d55a868b58",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-09-16",
+      "amount": 29,
+      "status": "completed",
+      "medium": "balance",
+      "description": "RESTAURANT"
+    },
+    {
+      "_id": "fff6a3bc-7bb6-4fd0-b35b-0c4b41e2cb7e",
+      "type": "merchant",
+      "merchant_id": "6c15d3e3-5d67-4399-94b4-7fce7a8962b1",
+      "payer_id": "c3b3ff14-c573-429e-bf33-54c1d650f0ac",
+      "purchase_date": "2026-08-06",
+      "amount": 46,
+      "status": "completed",
+      "medium": "balance",
+      "description": "FUEL"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "55d42975-e282-4a4e-b408-1251c13040ea",
+      "transaction_date": "2026-08-17",
+      "status": "completed",
+      "amount": 60,
+      "description": "AUTOSAVE"
+    },
+    {
+      "id": "c1dfc290-ba1e-4438-aea6-8f1f260e8f8a",
+      "transaction_date": "2026-07-08",
+      "status": "completed",
+      "amount": 60,
+      "description": "AUTOSAVE"
+    },
+    {
+      "id": "f83c3ba1-6ab1-434e-80e5-d631aaec7828",
+      "transaction_date": "2026-09-14",
+      "status": "completed",
+      "amount": 60,
+      "description": "AUTOSAVE"
+    }
+  ],
+  "bills": []
+}

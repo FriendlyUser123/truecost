@@ -1,0 +1,462 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Ready Card.
+
+   Same stock as the rest of the app — every colour, font and rule below is a
+   token out of app/globals.css, which this file does not own and does not
+   touch. What is new here is one primitive: a DAILY balance curve that
+   crosses zero. The twelve-bar benefit strip in globals.css cannot do that
+   (twelve fixed columns, no negative direction), so the strip's visual
+   language is rebuilt at 46 columns rather than bent.
+
+   One tone attribute, `data-tone`, carries the class through the page:
+   ok = TIMING, gold = STALE, alarm = STRUCTURAL.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.back {
+  font-size: 13px;
+  color: var(--plan);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.back:hover { border-bottom-color: var(--plan); }
+
+/* ── the routing decision ────────────────────────────────────────────────── */
+
+/* First thing on the page, because it is the product: what Ready decided to
+   do with a physician's attention. `data-sent="no"` is deliberately the
+   quietest treatment on the screen — a suppressed alert should not shout. */
+.routing {
+  margin-top: 18px;
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline;
+  padding: 12px 18px 13px;
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--tone, var(--ink-3));
+  background: var(--card);
+}
+.routing[data-tone='gold']  { --tone: var(--gold); }
+.routing[data-tone='plan']  { --tone: var(--plan); }
+.routing[data-tone='quiet'] { --tone: var(--ink-3); }
+.routing[data-sent='no'] { background: var(--stock); }
+
+.routeBadge {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em;
+  padding: 4px 10px; white-space: nowrap;
+  border: 1px solid var(--tone, var(--ink-3));
+  color: var(--tone, var(--ink-3));
+}
+.routeLine {
+  flex: 1 1 380px; min-width: 0; margin: 0;
+  font-size: 13.5px; line-height: 1.55; color: var(--ink-2); max-width: 88ch;
+}
+
+/* ── the window ──────────────────────────────────────────────────────────── */
+
+.hero {
+  margin-top: 10px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--tone, var(--plan));
+  box-shadow: var(--shadow-panel);
+}
+.hero[data-tone='ok']     { --tone: var(--ok); --tone-lo: var(--ok-lo); }
+.hero[data-tone='gold']   { --tone: var(--gold); --tone-lo: var(--gold-lo); }
+.hero[data-tone='alarm']  { --tone: var(--alarm); --tone-lo: var(--alarm-lo); }
+
+.heroMeta {
+  display: flex; flex-wrap: wrap; gap: 4px 22px;
+  padding: 13px 22px 11px;
+  border-bottom: 1px solid var(--rule-2);
+  font-size: 13px; color: var(--ink-2);
+}
+.heroMeta span { white-space: nowrap; }
+.ref {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--ink); text-transform: uppercase;
+}
+
+.heroMain {
+  display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: flex-start;
+  padding: 20px 22px 18px;
+}
+.dateBlock { flex: 1 1 420px; min-width: 0; }
+.kicker {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px;
+}
+/* The Ready Day used to be one date at 76px. It is a WINDOW now, and the
+   type size is part of the honesty: a floor and a range, both legible, with
+   neither pretending to a precision the projection does not have. */
+.windowRow { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.windowRow + .windowRow { margin-top: 4px; }
+.windowTag {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-3);
+  min-width: 56px;
+}
+.date {
+  font-size: clamp(28px, 4.4vw, 44px);
+  font-weight: 500; line-height: 1.05; letter-spacing: -0.04em;
+  color: var(--tone, var(--ink));
+}
+.dateLikely {
+  font-size: clamp(17px, 2.4vw, 23px);
+  font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink-2);
+}
+.dateNone { color: var(--alarm); letter-spacing: -0.03em; }
+.dateSub {
+  margin-top: 11px; font-size: 13.5px; color: var(--ink-2); max-width: 54ch; line-height: 1.55;
+}
+.windowNote {
+  margin: 9px 0 0; padding-left: 10px;
+  border-left: 2px solid var(--rule);
+  font-size: 12px; line-height: 1.5; color: var(--ink-3); max-width: 62ch;
+}
+
+.badgeStack { flex: 0 1 300px; min-width: 220px; }
+.classBadge {
+  display: inline-block;
+  font-family: var(--mono); font-size: 15px; font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 7px 14px;
+  border: 2px solid var(--tone, var(--ink));
+  color: var(--tone, var(--ink));
+  background: var(--tone-lo, var(--stock));
+  transform: rotate(-1.2deg);
+}
+.gloss {
+  margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 40ch;
+}
+
+/* ── the clinical window ─────────────────────────────────────────────────── */
+
+/* This block replaces every "script expires" string that used to be on this
+   screen. It carries its own correction, because the correction is a better
+   line than the error it replaces. */
+.cwin {
+  padding: 12px 22px 14px;
+  border-top: 1px solid var(--rule-2);
+  background: var(--stock);
+}
+.cwin[data-state='closed'] { background: var(--alarm-lo); }
+
+.cwinHead { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.cwinTag {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--plan);
+}
+.cwinDate { font-size: 15px; font-weight: 500; color: var(--ink); }
+.cwinDays { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
+.cwinLate {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--alarm); border: 1px solid currentColor; padding: 2px 7px;
+}
+.cwinReason {
+  margin: 7px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); max-width: 78ch;
+}
+.cwinNote {
+  margin: 8px 0 0; padding-top: 7px; border-top: 1px dashed var(--rule);
+  font-size: 12px; line-height: 1.5; color: var(--ink-3); max-width: 84ch;
+}
+
+.slotRow {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline;
+  padding: 11px 22px 13px;
+  border-top: 1px solid var(--rule-2);
+  background: linear-gradient(180deg, #fbfcfd, #f4f7fa);
+  font-size: 12.5px; color: var(--ink-2);
+}
+.slotBadge {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 3px 9px; border: 1px solid currentColor; white-space: nowrap;
+}
+.slotBadge[data-tone='ok']    { color: var(--ok); background: var(--ok-lo); }
+.slotBadge[data-tone='alarm'] { color: var(--alarm); background: var(--alarm-lo); }
+.slotBadge[data-tone='plan']  { color: var(--plan); background: var(--plan-lo); }
+.slotBadge[data-tone='quiet'] { color: var(--ink-3); background: var(--stock); }
+.slotWhy { flex: 1 1 320px; min-width: 0; }
+.slotBudget { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); white-space: nowrap; }
+
+/* ── the curve ───────────────────────────────────────────────────────────── */
+
+.curve { margin: 0 0 18px; }
+
+.plot {
+  position: relative;
+  display: grid; gap: 1px; align-items: stretch;
+  grid-template-columns: repeat(var(--n), 1fr);
+  height: 190px;
+  padding-top: 22px;
+  border-bottom: 2px solid var(--ink);
+}
+.col { position: relative; height: 100%; }
+/* The published {earliest, likely} band. Bleeds 1px either side so the grid
+   gap does not stripe it, and sits behind the bars. */
+.col[data-band='in']::before {
+  content: '';
+  position: absolute; top: -22px; bottom: 0; left: -1px; right: -1px;
+  background: var(--ok-lo);
+  z-index: 0;
+}
+.barFill {
+  position: absolute; left: 0; right: 0;
+  min-height: 1px;
+  background: var(--bank);
+  border-radius: 1px 1px 0 0;
+  z-index: 1;
+}
+.barFill[data-state='down']  { background: var(--alarm); border-radius: 0 0 1px 1px; }
+.barFill[data-state='today'] { background: var(--ink); }
+.barFill[data-state='ready'] { background: var(--ok); }
+
+.flag {
+  position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; pointer-events: none;
+}
+.flag b {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em;
+  color: #fff; background: var(--ok); padding: 2px 6px; white-space: nowrap;
+}
+.flag i { width: 1px; height: 12px; background: var(--ok); }
+
+.zeroLine {
+  position: absolute; left: 0; right: 0; height: 0;
+  border-top: 1px solid var(--rule); pointer-events: none;
+}
+.copayLine {
+  position: absolute; left: 0; right: 0; height: 0;
+  border-top: 2px dashed var(--alarm); pointer-events: none;
+}
+.copayLine span {
+  position: absolute; right: 0; top: -15px;
+  font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--alarm);
+  background: var(--card); padding: 0 0 0 5px; letter-spacing: -0.02em;
+}
+
+.axis {
+  display: grid; gap: 1px; grid-template-columns: repeat(var(--n), 1fr);
+  margin-top: 5px;
+}
+.tick {
+  font-family: var(--mono); font-size: 9px; color: var(--ink-3);
+  white-space: nowrap; text-align: center;
+  /* 46 columns are narrower than "Sep 19"; let the label spill either way
+     rather than truncate it, since only every 7th column carries one. */
+  overflow: visible;
+}
+.tick[data-mark='ready'] { color: var(--ok); font-weight: 600; }
+.tick[data-mark='today'] { color: var(--ink); font-weight: 600; }
+
+.legend {
+  display: flex; flex-wrap: wrap; gap: 4px 16px;
+  margin: 14px 0 0; font-size: 12px; color: var(--ink-2);
+}
+.legend i {
+  display: inline-block; width: 10px; height: 10px; margin-right: 6px;
+  vertical-align: -1px; border-radius: 1px; background: var(--bank);
+}
+.legend i[data-state='down']  { background: var(--alarm); }
+.legend i[data-state='ready'] { background: var(--ok); }
+.dash {
+  width: 14px !important; height: 0 !important; border-top: 2px dashed var(--alarm);
+  background: transparent !important; vertical-align: 3px !important;
+}
+.bandKey { background: var(--ok-lo) !important; border: 1px solid var(--ok); }
+
+/* ── displacement ────────────────────────────────────────────────────────── */
+
+.displace, .displaceNone {
+  margin: 0 0 14px; padding: 12px 14px;
+  border-left: 3px solid var(--alarm);
+  background: var(--alarm-lo);
+  font-size: 14.5px; line-height: 1.55; max-width: 62ch;
+}
+.displaceNone { border-left-color: var(--rule); background: var(--stock); color: var(--ink-2); }
+.displace small, .displaceNone small {
+  display: block; margin-top: 6px; font-size: 12px; color: var(--ink-2); line-height: 1.45;
+}
+
+/* No ATM rules. The row is gone: the sandbox ignores /atms geo parameters and
+   holds only Arlington machines, so a distance printed for this Roanoke cohort
+   would be a fabricated number. getAtmsNear() stays in the Nessie client. */
+
+/* ── provenance ──────────────────────────────────────────────────────────── */
+
+.prov { font-size: 13.5px; }
+.provNote { color: var(--ink-2); font-size: 12.5px; margin-bottom: 12px; line-height: 1.5; }
+
+.provCols { display: grid; gap: 14px; }
+@media (min-width: 520px) { .provCols { grid-template-columns: 1fr 1fr; } }
+
+.provCol { border: 1px solid var(--rule); background: var(--stock); padding: 11px 13px 12px; }
+.provCol h3 {
+  margin: 0 0 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.provCol[data-side='sent']     { border-left: 3px solid var(--ok); }
+.provCol[data-side='sent'] h3  { color: var(--ok); }
+/* Suppressed: the left column describes an alert that does not exist. */
+.provCol[data-void='yes']      { border-left-color: var(--ink-3); opacity: 0.72; }
+.provCol[data-void='yes'] h3   { color: var(--ink-3); }
+.provCol[data-side='withheld'] { border-left: 3px solid var(--ink-3); }
+.provCol[data-side='withheld'] h3 { color: var(--ink-3); }
+.provCol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.provCol li {
+  display: flex; gap: 8px; align-items: baseline;
+  font-size: 13px; padding-bottom: 4px; border-bottom: 1px solid var(--rule-2);
+}
+.provCol li:last-of-type { border-bottom: none; }
+.provCol[data-side='withheld'] li { color: var(--ink-3); text-decoration: line-through; }
+.provCol[data-side='withheld'] li sup { text-decoration: none; color: var(--alarm); }
+.provKey {
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-3); min-width: 74px;
+}
+.provX { font-family: var(--mono); color: var(--alarm); text-decoration: none; }
+.provFoot { margin: 9px 0 0; font-size: 11.5px; color: var(--ink-3); line-height: 1.45; }
+
+.provDagger {
+  margin: 13px 0 0; font-size: 12px; line-height: 1.55; color: var(--ink-2);
+  border-top: 1px solid var(--rule-2); padding-top: 10px;
+}
+.provDagger sup { color: var(--alarm); }
+
+/* The counterpoint the red team raised, kept rather than argued away. */
+.provCost {
+  margin: 11px 0 0; padding: 10px 12px;
+  border-left: 3px solid var(--alarm);
+  background: var(--alarm-lo);
+  font-size: 12.5px; line-height: 1.6; color: var(--ink-2); max-width: 80ch;
+}
+.provCost .fig { color: var(--ink); }
+
+/* ── the action ──────────────────────────────────────────────────────────── */
+
+.action {
+  margin-top: 18px; padding: 18px 22px 20px;
+  background: var(--ink); color: #fff;
+  border-left: 5px solid var(--tone, var(--plan));
+  display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-start;
+}
+.action[data-tone='ok']    { --tone: var(--ok); }
+.action[data-tone='gold']  { --tone: var(--gold); }
+.action[data-tone='alarm'] { --tone: var(--alarm); }
+
+.actionCopy { flex: 1 1 360px; min-width: 0; }
+.actionCopy h3 { margin: 0 0 4px; font-size: 18px; font-weight: 500; letter-spacing: -0.02em; }
+.actionCopy p { margin: 0 0 6px; color: #b6c2d2; font-size: 13.5px; line-height: 1.55; max-width: 62ch; }
+.actionCopy .fig { color: #fff; }
+.actionBtns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.gate {
+  font-size: 12px !important; line-height: 1.5; padding: 7px 10px; margin-top: 8px !important;
+  border-left: 2px solid var(--ok); background: rgba(255, 255, 255, 0.05);
+}
+.gate[data-ok='no'] { border-left-color: var(--alarm); color: #f2b8bc !important; }
+
+/* Said before a judge finds it. Quiet, but present. */
+.caveat {
+  font-size: 12px !important; line-height: 1.55; color: #8b9ab0 !important;
+  margin-top: 8px !important; max-width: 72ch;
+}
+
+.blocked {
+  flex: 1 1 100%; margin: 0; font-size: 12.5px; color: #f2b8bc; line-height: 1.5; max-width: 76ch;
+}
+.error {
+  flex: 1 1 100%; margin: 0; padding: 9px 12px;
+  background: var(--alarm); color: #fff; font-size: 13px; line-height: 1.45;
+}
+
+.receipt {
+  flex: 1 1 100%; display: grid; gap: 9px 22px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.receipt > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.receipt span { font-size: 14px; word-break: break-all; }
+.rk {
+  font-size: 10.5px !important; letter-spacing: 0.08em; text-transform: uppercase; color: #8b9ab0;
+}
+
+.priorGrant {
+  flex: 1 1 100%; margin: 0; font-size: 12.5px; color: #b6c2d2; line-height: 1.55; max-width: 76ch;
+}
+.priorGrant .fig { color: #fff; }
+
+/* ── the bridge receipt: the money-moves moment ──────────────────────────── */
+
+.bridgeOut { flex: 1 1 100%; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.bridgeHead {
+  font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #8b9ab0; margin-bottom: 12px;
+}
+.bridgeHead .fig { color: #fff; text-transform: none; letter-spacing: 0; }
+
+.bridgeGrid { display: grid; gap: 12px; }
+@media (min-width: 620px) { .bridgeGrid { grid-template-columns: 1fr 1fr; } }
+
+.bal { background: rgba(255, 255, 255, 0.06); padding: 11px 14px 12px; border-left: 3px solid var(--gold); }
+.balLabel { font-size: 12px; color: #b6c2d2; margin-bottom: 6px; }
+.balRow { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.was { font-size: 16px; color: #8b9ab0; text-decoration: line-through; }
+.arrow { color: #8b9ab0; }
+.now { font-size: 27px; font-weight: 500; letter-spacing: -0.03em; color: #fff; }
+.balId { margin-top: 5px; font-family: var(--mono); font-size: 10.5px; color: #8b9ab0; word-break: break-all; }
+
+.bridgeFoot { margin: 12px 0 0; font-size: 12px; color: #8b9ab0; line-height: 1.55; max-width: 76ch; }
+
+/* ── the patient's card ──────────────────────────────────────────────────── */
+
+.cards { display: grid; gap: 16px; }
+@media (min-width: 840px) { .cards { grid-template-columns: 1fr 1fr; } }
+
+.pcard { background: var(--stock); border: 1px solid var(--rule); padding: 15px 17px 17px; }
+.pcardHead { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+.pcardLang {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+  margin-right: auto;
+}
+.pcardTitle { margin: 0 0 8px; font-size: 19px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; }
+.pcardDate {
+  font-size: 24px; font-weight: 500; letter-spacing: -0.03em; color: var(--gold); margin-bottom: 4px;
+}
+/* The range, under the floor. Small on purpose: the patient acts on the
+   soonest day, and the spread is context, not the instruction. */
+.pcardDateSub {
+  font-size: 14px; line-height: 1.45; color: var(--ink-2); margin-bottom: 10px; max-width: 44ch;
+}
+.pcardLine { margin: 0 0 8px; font-size: 15px; line-height: 1.6; max-width: 46ch; }
+.pcardTodo {
+  margin: 12px 0 0; padding: 10px 12px; background: var(--gold-lo); border-left: 3px solid var(--gold);
+  font-size: 15px; line-height: 1.6; max-width: 48ch;
+}
+.pcardFoot {
+  margin: 12px 0 0; padding-top: 9px; border-top: 1px solid var(--rule-2);
+  font-size: 11.5px; color: var(--ink-3); line-height: 1.45; max-width: 52ch;
+}
+
+/* ── the trace ───────────────────────────────────────────────────────────── */
+
+.trace {
+  margin-top: 18px; background: var(--card); border: 1px solid var(--rule);
+  border-left: 5px solid var(--bank);
+}
+.trace summary {
+  padding: 13px 20px; cursor: pointer; font-size: 14.5px; font-weight: 500; letter-spacing: -0.01em;
+  list-style-position: inside;
+}
+.trace summary::marker { color: var(--ink-3); }
+.traceBody { padding: 0 20px 18px; }
+.traceBody h4 {
+  margin: 14px 0 7px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--bank);
+}
+.traceBody ol { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.traceBody li { font-size: 13px; line-height: 1.55; color: var(--ink-2); max-width: 88ch; }
+.traceFoot {
+  margin: 16px 0 0; padding-top: 11px; border-top: 1px solid var(--rule-2);
+  font-size: 12.5px; line-height: 1.55; color: var(--ink-2); max-width: 80ch;
+}
+
+@media (max-width: 620px) {
+  .plot { height: 150px; }
+  .heroMeta { gap: 3px 14px; font-size: 12px; }
+  .receipt { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,558 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   /exchange — the clearing terms, as a term sheet with an experiment attached.
+
+   Every other screen in this build is a clinical document. This one is a term
+   sheet, and it is styled as one on purpose: the reader is a commercial lead,
+   the question is "what is the unit, what do you actually know, and what are
+   you asking for", and a dashboard would answer it worse. Hence no charts, no
+   coloured tiles, no sparklines. Ruled rows, a right-aligned mono figure
+   column, and definitions that read like clauses.
+
+   One rule carried through the whole file: anything derived from a price we
+   invented is visually subordinate to the block that is measured. §1 is plain
+   ink on paper. The assumption note is the only amber thing on the page, and
+   it sits directly under the prices it qualifies.
+
+   Tokens come from app/globals.css. Nothing is redefined here except what is
+   specific to an instrument sheet.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── the head of the sheet ───────────────────────────────────────────────── */
+
+.sheet {
+  margin-top: 22px;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  box-shadow: var(--shadow-panel);
+}
+
+.sheetTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 22px;
+  padding: 15px 22px 12px;
+  border-bottom: 1px solid var(--ink);
+}
+.sheetTop h1 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.sheetTop :global(.spacer) {
+  flex: 1 1 40px;
+}
+.party {
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.party b {
+  font-weight: 500;
+  color: var(--ink);
+}
+.draft {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border: 1px solid var(--rule);
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* Recitals: the four facts the sheet is drawn against. */
+.recitals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 720px) {
+  .recitals { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.recital {
+  padding: 11px 22px 12px;
+  border-right: 1px solid var(--rule-2);
+  min-width: 0;
+}
+.recital:last-child { border-right: none; }
+.recital :global(.k) {
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.recital :global(.v) {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-top: 2px;
+}
+.recital :global(.s) {
+  font-size: 11.5px;
+  color: var(--ink-2);
+  margin-top: 1px;
+}
+.recital :global(.s) b { font-weight: 500; color: var(--ink-2); }
+
+/* The withheld count is the number this screen is actually about. */
+.recital[data-lead='true'] { background: var(--stock); }
+.recital[data-lead='true'] :global(.v) { color: var(--plan); font-weight: 600; }
+
+/* The slot cap control. Server-rendered links, because the whole sheet
+   recomputes from the board and there is nothing here worth hydrating. */
+.caps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding: 11px 22px 13px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--stock);
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.caps :global(.lbl) {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+.cap {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  text-decoration: none;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+  padding: 2px 9px;
+  background: var(--card);
+}
+.cap:hover { border-color: var(--ink-3); color: var(--ink); }
+.cap[data-on='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.measured { margin-left: auto; color: var(--ink-3); font-size: 11.5px; }
+
+/* ── generic block inside the sheet ──────────────────────────────────────── */
+
+.block { border-top: 1px solid var(--ink); }
+.blockHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  padding: 14px 22px 0;
+}
+.blockHead h2 {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.blockHead :global(.cl) {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.blockHead :global(.note) { margin-left: auto; font-size: 12px; color: var(--ink-3); }
+.blockBody { padding: 10px 22px 20px; }
+.blockBody > p {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  max-width: 86ch;
+  line-height: 1.55;
+}
+.blockBody > p b { font-weight: 500; color: var(--ink); }
+.blockBody > p:last-child { margin-bottom: 0; }
+
+/* ── §1 the refusal ledger: the one block with no price in it ────────────── */
+
+.refusals {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 18px;
+}
+.refusals th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 9px 16px 9px 0;
+  border-bottom: 1px solid var(--rule-2);
+  vertical-align: baseline;
+}
+.refusals th small {
+  display: block;
+  font-weight: 400;
+  color: var(--ink-3);
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin-top: 2px;
+  max-width: 82ch;
+}
+.refusals td {
+  text-align: right;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule-2);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 17px;
+  white-space: nowrap;
+  vertical-align: baseline;
+  width: 1%;
+}
+/* Routed off-channel is the one withheld class that still reaches a human. */
+.refusals tr[data-rerouted='true'] th { color: var(--bank); }
+.refusals tr[data-rerouted='true'] td { color: var(--bank); }
+
+.total th,
+.total td {
+  border-bottom: none;
+  border-top: 2px solid var(--ink);
+  padding-top: 11px;
+}
+.total td { font-size: 21px; font-weight: 500; color: var(--plan); }
+.total th small { font-family: var(--mono); letter-spacing: -0.01em; }
+
+/* Verdict split — who gets sent, who does not, and what is being asked. */
+.classSplit { overflow-x: auto; }
+.classSplit table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 540px;
+}
+.classSplit thead th {
+  text-align: right;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0 14px 7px 0;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.classSplit thead th:first-child,
+.classSplit thead th.wide { text-align: left; }
+.classSplit tbody th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--rule-2);
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.classSplit tbody td {
+  text-align: right;
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--rule-2);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  vertical-align: baseline;
+}
+.classSplit tbody td.wide {
+  text-align: left;
+  font-family: var(--sans);
+  color: var(--ink-2);
+  line-height: 1.5;
+  padding-right: 0;
+}
+.wide { width: 58%; }
+
+.selfTest {
+  margin-top: 16px !important;
+  border-left: 2px solid var(--ink);
+  padding: 2px 0 2px 14px;
+  font-size: 13px !important;
+}
+
+/* ── §2 the unit: clauses, not a comparison ──────────────────────────────── */
+
+.terms { margin: 0 0 16px; }
+.terms > div {
+  display: grid;
+  gap: 2px 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule-2);
+}
+@media (min-width: 760px) {
+  .terms > div { grid-template-columns: 180px minmax(0, 1fr); }
+}
+.terms dt {
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 2px;
+}
+.terms dd {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 80ch;
+}
+.terms dd b { font-weight: 500; color: var(--ink); }
+
+.figure {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 19px;
+  letter-spacing: -0.03em;
+  color: var(--ink) !important;
+}
+.figure span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0;
+  color: var(--ink-3);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+/* The only amber thing on the page, directly under the prices it qualifies. */
+.assumption {
+  border-left: 3px solid var(--gold);
+  background: var(--gold-lo);
+  padding: 12px 15px;
+  font-size: 12.5px;
+  color: #6b4a0c;
+  line-height: 1.6;
+  max-width: 88ch;
+}
+.assumption b { font-weight: 600; }
+
+/* ── §3 the concession ───────────────────────────────────────────────────── */
+
+.experiment { display: grid; gap: 16px; align-items: start; }
+@media (min-width: 900px) {
+  .experiment { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); }
+}
+
+.breakeven {
+  border-left: 3px solid var(--alarm);
+  background: var(--alarm-lo);
+  padding: 14px 16px;
+}
+.breakeven :global(.big) {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(30px, 5vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--alarm);
+  line-height: 1;
+}
+.breakeven :global(.cap) {
+  font-size: 12.5px;
+  color: #7a2a30;
+  margin-top: 9px;
+  line-height: 1.6;
+}
+
+.longhand {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 84ch;
+}
+.longhand b { font-weight: 500; color: var(--ink); }
+.longhand em { font-style: italic; }
+.longhand code {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  background: var(--stock);
+  border: 1px solid var(--rule-2);
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+
+.sensitivity {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.sensitivity thead th {
+  text-align: right;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0 0 7px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.sensitivity thead th:first-child { text-align: left; padding-left: 0; }
+.sensitivity tbody th {
+  text-align: left;
+  font-family: var(--mono);
+  font-weight: 400;
+  color: var(--ink-2);
+  padding: 8px 14px 8px 0;
+  border-bottom: 1px solid var(--rule-2);
+}
+.sensitivity tbody td {
+  text-align: right;
+  padding: 8px 0 8px 14px;
+  border-bottom: 1px solid var(--rule-2);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.sensitivity tr[data-current='true'] th,
+.sensitivity tr[data-current='true'] td { color: var(--ink); font-weight: 500; }
+
+.sensitivityNote {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  line-height: 1.6;
+  max-width: 84ch;
+}
+
+/* ── §4 the ask ──────────────────────────────────────────────────────────── */
+
+.closer {
+  border-top: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  padding: 20px 22px 22px;
+}
+.closer h2 {
+  margin: 0 0 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8fa8c6;
+}
+.closer :global(.line) {
+  margin: 0 0 10px;
+  font-size: clamp(19px, 2.5vw, 25px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  max-width: 30ch;
+}
+.closer :global(.line) em { font-style: normal; color: #7fd3ab; }
+.closer :global(.q) {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #cdd8e6;
+  line-height: 1.55;
+  max-width: 76ch;
+}
+
+.protocol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: #2a3956;
+  border: 1px solid #2a3956;
+}
+.protocol li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px 14px;
+  background: #16233a;
+  padding: 10px 14px 11px;
+  font-size: 12.5px;
+  align-items: baseline;
+}
+@media (min-width: 760px) {
+  .protocol li { grid-template-columns: 96px minmax(0, 1fr); }
+}
+.protocol :global(.k) {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6d86a8;
+}
+.protocol :global(.t) { color: #b6c2d2; line-height: 1.55; }
+
+.closer :global(.foot) {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: #93a4bb;
+  line-height: 1.6;
+  max-width: 88ch;
+}
+.closer :global(.foot) b { color: #fff; font-weight: 500; }
+
+/* ── §5 the receipts ─────────────────────────────────────────────────────── */
+
+.receipts { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.receipts thead th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0 14px 7px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.receipts thead th:last-child { padding-right: 0; }
+.receipts td {
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--rule-2);
+  vertical-align: baseline;
+}
+.receipts td:last-child { padding-right: 0; }
+.receipts :global(.id) {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  color: var(--bank);
+  word-break: break-all;
+}
+.receipts :global(.amt) {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.receipts tr[data-counted='false'] td { color: var(--ink-3); }
+
+.empty {
+  border: 1px dashed var(--rule);
+  background: var(--stock);
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 82ch;
+}
+.empty b { font-weight: 500; color: var(--ink); }
+
+/* ── footer nav ──────────────────────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+  font-size: 13px;
+}
+.nav a { color: var(--plan); text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+.nav span { color: var(--ink-3); }
